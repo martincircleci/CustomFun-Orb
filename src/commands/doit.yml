@@ -1,0 +1,15 @@
+description: >
+  This command echos "This should probably do something".
+# What will this command do?
+# Descriptions should be short, simple, and clear.
+parameters:
+  to:
+    type: string
+    default: "This should probably do something"
+    description: "Just do it"
+steps:
+  - run:
+      environment:
+        PARAM_TO: <<parameters.to>>
+      name: Something
+      command: <<include(scripts/doit.sh)>>
